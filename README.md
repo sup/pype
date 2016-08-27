@@ -20,10 +20,9 @@ Hi Charles!
 from pype.pype import p
 
 def double_and_sum(num_lst):
-    # Create a curried mapper function
     create_mapper = lambda (fn): lambda (lst): map(fn, lst)
     mult = lambda n: n * 2
-    # Application of multiple pipes
+
     return num_lst |p| (mult |p| create_mapper) |p| sum
 
 >>> [n for n in range(100)] |p| double_and_sum
