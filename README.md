@@ -2,6 +2,9 @@
 
 A general purpose sh-like forward pipe operator for Python.
 
+# Installation
+`pip install python-pipe`
+
 # Simple Example
 ```
 from pype.pype import p
