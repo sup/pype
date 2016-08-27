@@ -4,14 +4,14 @@ from pype.pype import p
 def hello_world_example():
     def echo(x):
         print x
-
+    # Simple pipe application
     'This is a simple pipe to echo.' |p| echo
 
 def multiple_pipe_example():
-    # Curry a mapper function
-    def create_mapper(fn):
-        return lambda lst: map(fn, lst)
+    # Create a curried mapper function
+    create_mapper = lambda (fn): lambda (lst): map(fn, lst)
     mult = lambda n: n * 2
+    # Application of multiple pipes
     print [n for n in range(0,100)] |p| (mult |p| create_mapper) |p| sum
 
 if __name__ == '__main__':
